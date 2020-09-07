@@ -1,6 +1,6 @@
 {
   "name": "laravel-mix-extract-media-queries",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Laravel Mix extension for @elambro/extract-css-media-queries",
   "main": "index.js",
   "scripts": {
