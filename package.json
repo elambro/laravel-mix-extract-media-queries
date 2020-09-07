@@ -1,0 +1,21 @@
+{
+  "name": "laravel-mix-extract-media-queries",
+  "version": "1.0.0",
+  "description": "A Laravel Mix extension for @elambro/extract-css-media-queries",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elambro/extract-css-media-queries.git"
+  },
+  "author": "Erin Lambroschini",
+  "license": "MIT",
+  "peerDependencies": {
+    "laravel-mix": "^2.1.7"
+  },
+  "dependencies": {
+    "@elambro/extract-css-media-queries": "^0.1.1"
+  }
+}
