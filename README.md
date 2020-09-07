@@ -14,14 +14,15 @@ npm i -D laravel-mix-extract-media-queries
 
 ```js
 
-require('./laravel-mix-extract-media-queries');
-
+require('laravel-mix-extract-media-queries');
 mix.extractMediaQueries({
-    verbose : !mix.inProduction(), 
-    minify  : mix.inProduction(),
-    filename: `css/large.css`,
-    combined: true,
-    breakpoints: [768]
+    breakpoints: [{
+        minWidth: 768,
+        verbose : verbose, 
+        minify  : mix.inProduction(),
+        combined: true,
+        filename: `css/large.css`,
+    }]
 });
 
 ```
