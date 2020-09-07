@@ -2,6 +2,8 @@
 
 # Laravel Mix Extract Media Queries
 
+[![npm version](https://badge.fury.io/js/laravel-mix-extract-media-queries.svg)](https://badge.fury.io/js/laravel-mix-extract-media-queries)
+
 A Laravel Mix Extension for [https://github.com/elambro/extract-css-media-queries]
 
 ## Installation
