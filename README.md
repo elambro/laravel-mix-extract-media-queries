@@ -27,4 +27,4 @@ mix.extractMediaQueries({
 
 ```
 
-For options, see [https://github.com/elambro/extract-css-media-queries]
+For options, see the webpack plugin [https://github.com/elambro/extract-css-media-queries]
