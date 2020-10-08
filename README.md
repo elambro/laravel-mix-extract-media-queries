@@ -43,6 +43,8 @@ This will extract all media queries with a min-width greater or equal to 768 and
 
 ## Examples
 
+1.
+
 `const options = {breakpoints:[567,767]}`
 
 Will give you 3 files:
@@ -51,6 +53,43 @@ Will give you 3 files:
 - `style-567.css` -  Only media queries `@media(min-width: 567px)` up to `@media(min-width: 767px)`
 
 Duplicate media queries are merged in the results, then they're sorted with the highest `min-width` (and `min-height`) media queries at the bottom of the file. 
+
+2.
+
+```js
+{
+    groups: [
+        {
+            breakpoints:[
+                {
+                    minWidth: 640,
+                    filename: 'css/utilities-sm.[ext]',
+                },
+                {
+                    minWidth: 768,
+                    filename: 'css/utilities-md.[ext]',
+                },
+                {
+                    minWidth: 1024,
+                    filename: 'css/utilities-lg.[ext]',
+                },
+                {
+                    minWidth: 1280,
+                    filename: 'css/utilities-xl.[ext]',
+                },
+                {
+                    minWidth: 1500,
+                    filename: 'css/utilities-2xl.[ext]',
+                },
+            ],
+            include : '/css/utilities.css',
+            combined : false,
+            verbose : true,
+            minify  : mix.inProduction(),
+        },
+    ]
+}
+```js
 
 ## Webpack
 
