@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elambro/extract-css-media-queries.git"
+    "url": "git+https://github.com/elambro/laravel-mix-extract-media-queries.git"
   },
   "author": "Erin Lambroschini",
   "license": "MIT",
   "peerDependencies": {
-    "laravel-mix": "^5.0"
+    "laravel-mix": "^6.0.0"
   },
   "dependencies": {
-    "@elambro/extract-css-media-queries": "^0.1.2"
+    "@elambro/extract-css-media-queries": "^0.2.0"
   }
 }
