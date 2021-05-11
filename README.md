@@ -31,7 +31,7 @@ require('laravel-mix-extract-media-queries');
 mix.extractMediaQueries({
     breakpoints: [{
         minWidth: 768,
-        verbose : verbose, 
+        verbose : false, 
         minify  : mix.inProduction(),
         combined: true,
         filename: `css/large.css`,
