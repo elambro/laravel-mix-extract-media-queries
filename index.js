@@ -1,10 +1,9 @@
-const ExtractMediaQueriesPlugin = require('@elambro/extract-css-media-queries')
+const ExtractCssMediaQueriesPlugin = require('@elambro/extract-css-media-queries')
 
 const mix = require("laravel-mix");
 
-// Wrapper for https://github.com/SassNinja/media-query-plugin
+class ExtractCssMediaQueries {
 
-class ExtractMediaQueries {
     /**
      * The API name for the component.
      */
@@ -28,6 +27,7 @@ class ExtractMediaQueries {
      */
     register(userConfig) {
         this.userConfig = userConfig;
+        this.plugin     = new ExtractCssMediaQueriesPlugin(this.config());
     }
 
     /*
@@ -36,7 +36,23 @@ class ExtractMediaQueries {
      * @return {Array|Object}
      */
     webpackPlugins() {
-        return new ExtractMediaQueriesPlugin(this.config())
+
+        const plugin = this.plugin;
+
+        return [
+            plugin,
+            new class {
+                apply(compiler) {
+                    // Works with
+                    compiler.hooks.emit.tapAsync('ExtractCssMediaQueriesPlugin', (curCompiler, callback) => {
+                        Object.entries(plugin.created).forEach(([name, path]) => {
+                            Mix.manifest.addRaw ? Mix.manifest.addRaw(name, path) : Mix.manifest.manifest[name] = path;
+                        });
+                        callback();
+                    });
+                }
+            }
+        ]
     }
 
     config() {
@@ -46,6 +62,6 @@ class ExtractMediaQueries {
     }
 }
 
-mix.extend('extractMediaQueries', new ExtractMediaQueries());
+mix.extend('extractMediaQueries', new ExtractCssMediaQueries());
 
-module.exports = ExtractMediaQueries;
+module.exports = ExtractCssMediaQueries;

@@ -29,9 +29,10 @@ require('laravel-mix-extract-media-queries');
 //...
 
 mix.extractMediaQueries({
+    hash: '[name].[contenthash].css',
     breakpoints: [{
         minWidth: 768,
-        verbose : false, 
+        verbose : false,
         minify  : mix.inProduction(),
         combined: true,
         filename: `css/large.css`,
@@ -48,11 +49,11 @@ This will extract all media queries with a min-width greater or equal to 768 and
 `const options = {breakpoints:[567,767]}`
 
 Will give you 3 files:
--  `style.css`       - Common style, with all media queries `@media (min-width: 567px)` and higher extracted out. 
+-  `style.css`       - Common style, with all media queries `@media (min-width: 567px)` and higher extracted out.
 - `style-767.css`  - Only media queries `@media(min-width: 767px)` and above. e.g. `@media(min-width: 800px)` is also included.
 - `style-567.css` -  Only media queries `@media(min-width: 567px)` up to `@media(min-width: 767px)`
 
-Duplicate media queries are merged in the results, then they're sorted with the highest `min-width` (and `min-height`) media queries at the bottom of the file. 
+Duplicate media queries are merged in the results, then they're sorted with the highest `min-width` (and `min-height`) media queries at the bottom of the file.
 
 2.
 

@@ -16,6 +16,6 @@
     "laravel-mix": "^6.0.0"
   },
   "dependencies": {
-    "@elambro/extract-css-media-queries": "^0.2.0"
+    "@elambro/extract-css-media-queries": "^1.0.0"
   }
 }
