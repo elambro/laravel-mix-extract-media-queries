@@ -90,6 +90,7 @@ Duplicate media queries are merged in the results, then they're sorted with the 
         },
     ]
 }
+
 ```js
 
 ## Webpack
